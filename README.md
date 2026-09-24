@@ -1,24 +1,12 @@
-# DevOps GitOps Platform
+# Automated Kubernetes Deployment Platform Using Terraform & GitOps
 
-This repository contains the Kubernetes deployment configuration and Infrastructure as Code components for the **Automated Kubernetes Deployment Platform Using Terraform & GitOps** project.
+> **GitOps and Infrastructure repository** for the Automated Kubernetes Deployment Platform.
 
-The repository is responsible for the deployment and infrastructure side of the project and works together with the separate application repository.
+This repository contains the **Helm deployment configuration**, **Argo CD GitOps setup**, **Terraform Infrastructure as Code**, **Kubernetes resources**, and **Prometheus/Grafana monitoring** used to deploy and operate the application.
 
-The project demonstrates a complete DevOps workflow using:
+It serves as the **deployment, infrastructure, GitOps, and observability component** of the larger DevOps project. The application source code, automated tests, Docker configuration, CI/CD pipeline, security scanning, and GHCR image publishing are maintained separately in the **[devops-demo](https://github.com/sakeenabi03/devops-demo)** repository.
 
-* Kubernetes
-* Kind
-* Helm
-* Argo CD
-* Terraform
-* GitHub Actions
-* Docker
-* GitHub Container Registry (GHCR)
-* Trivy
-* Prometheus
-* Grafana
-
-The environment runs locally using a Kind Kubernetes cluster, allowing the complete workflow to be demonstrated without requiring a paid cloud Kubernetes environment.
+**Related Application & CI/CD Repository:** [devops-demo](https://github.com/sakeenabi03/devops-demo)
 
 ---
 
