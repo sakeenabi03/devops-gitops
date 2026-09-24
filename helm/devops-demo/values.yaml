@@ -1,0 +1,14 @@
+replicaCount: 3
+
+image:
+  repository: ghcr.io/sakeenabi03/devops-demo
+  tag: "7ada2da176745677c9e7c0885caec30202f545f1"
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 8000
+  targetPort: 8000
+
+container:
+  port: 8000

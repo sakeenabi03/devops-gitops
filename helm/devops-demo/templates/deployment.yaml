@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: {{ .Release.Name }}-devops-demo
+
+spec:
+  replicas: {{ .Values.replicaCount }}
+
+  selector:
+    matchLabels:
+      app: devops-demo
+
+  template:
+    metadata:
+      labels:
+        app: devops-demo
+
+    spec:
+      containers:
+        - name: devops-demo
+
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+
+          ports:
+            - containerPort: {{ .Values.container.port }}
+
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: {{ .Values.container.port }}
+            initialDelaySeconds: 5
+            periodSeconds: 10
+
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: {{ .Values.container.port }}
+            initialDelaySeconds: 10
+            periodSeconds: 20
